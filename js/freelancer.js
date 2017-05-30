@@ -46,4 +46,17 @@
         });
     });
 
+    // el overflow hidden sobre el body elimina el scroll
+    // agregamos esta propiedad al abrir cualquier modal
+    // (la clase modal es parte del markup de twitter bootstrap)
+    $('.modal').on('show', function () {
+    $(document).find('body').css('overflow', 'hidden');
+    });
+     
+    // retiramos la propiedad de overflow para devolver el scroll
+    // removemos esta propiedad al cerrar el modal
+    $('.modal').on('hide', function () {
+    $(document).find('body').css('overflow', 'auto');
+    });
+
 })(jQuery); // End of use strict
